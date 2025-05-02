@@ -1,96 +1,87 @@
-AI-Reception Bot
-A Human-in-the-Loop (HITL) AI receptionist system.
+# Frontdesk HITL AI Supervisor
 
-Features
-AI Agent: Receives customer questions via /call.
+A simple Flask-based simulation of a Human-in-the-Loop (HITL) AI receptionist system, designed for handling customer interactions with AI assistance and supervisor escalation.
 
-Known Answers: Responds to known questions from a local knowledge base.
+## Features
+- **AI Receptionist**: Handles incoming customer queries via `/call`.
+- **Knowledge Base**: Responds to known questions stored in a local knowledge base.
+- **Escalation Process**: If the AI can't answer, it creates a help request that gets escalated to a supervisor.
+- **Admin Panel**: A simple UI to manage help requests, mark them as resolved or unresolved, and view the knowledge base.
+- **Learning**: Supervisors can add answers to the knowledge base, allowing the AI to learn and improve.
 
-Escalation: For unknown questions, creates help requests that are escalated to a supervisor.
+## Tech Stack
+- Python 3
+- Flask
+- HTML + Bootstrap 5
+- JSON (lightweight database)
+- Postman (for testing)
 
-Supervisor Panel: Admin UI to manage help requests and mark them as resolved or unresolved.
-
-Learning: AI automatically learns new answers from supervisor input and updates the knowledge base.
-
-Tech Stack
-Python 3
-
-Flask
-
-HTML + Bootstrap 5
-
-JSON (lightweight DB)
-
-Postman (for testing)
-
-Setup
-Clone the repo:
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/ai-reception bot.git
-cd ai-reception bot
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/frontdesk-hitl.git
+   cd frontdesk-hitl
 Set up the virtual environment:
 
 bash
+Always show details
+
 Copy
-Edit
 python -m venv venv
 venv\Scripts\activate  # (Windows) or source venv/bin/activate (Linux/macOS)
-Install Flask:
+Install dependencies:
 
 bash
+Always show details
+
 Copy
-Edit
 pip install flask
-Run the app:
+Run the application:
 
 bash
+Always show details
+
 Copy
-Edit
 python app.py
 Test the AI agent (via Postman or curl):
 
 bash
+Always show details
+
 Copy
-Edit
 curl -X POST http://127.0.0.1:5000/call -d "question=What are your working hours?"
 Folder Structure
 bash
+Always show details
+
 Copy
-Edit
 frontdesk-hitl/
-├── aibot.py                
-├── help.json    
-├── responses.json   
-├── interface/
-│   ├── supervisor_panel.html       
-│   └── faq.html      
-└── README.md             
-Design Decisions
-JSON for storage: Lightweight and file-based instead of a database.
+├── app.py                # Flask server
+├── help_requests.json    # Help request data (simulated DB)
+├── knowledge_base.json   # Knowledge base for AI
+├── templates/
+│   ├── admin.html        # Admin panel UI
+│   └── learned.html      # View for learned answers
+└── README.md             # This README file
+Design Considerations
+File-based Storage: Uses JSON files instead of a database for simplicity and lightweight storage.
 
-Timeout Logic: Unanswered requests are marked as unresolved after 10 minutes.
+Timeout Feature: Requests are marked as unresolved if unanswered for more than 10 minutes.
 
-Self-improvement: Supervisor inputs enrich the knowledge base.
+Learning from Supervisor: Supervisor answers enrich the AI’s knowledge base.
 
-Simple UI: Bootstrap 5 for easy readability.
+UI Design: Simple, clean, and responsive using Bootstrap 5 for quick accessibility.
 
-Scalability
-Can switch to Firebase or DynamoDB for storage.
+Scalability Notes
+Easily replace JSON with Firebase or DynamoDB for production-level storage.
 
-Flask API can handle 1,000+ requests per day.
+The system is designed to scale and can handle 1,000+ requests per day.
 
-Blueprint structure for future scalability.
+Future improvements can include Flask blueprints for modularity and integrations like LiveKit or Twilio for real-time call audio.
 
-Potential for audio calls using LiveKit or Twilio.
+Planned Improvements
+Authentication: Secure the admin panel with login functionality.
 
-Future Improvements
-Add authentication for the admin panel.
+Customer Interaction: Implement customer IDs and SMS callback features.
 
-Implement customer IDs and SMS callbacks.
-
-Store historical call logs and performance metrics.
-
-
+Call Logs & Metrics: Store historical data for performance tracking and analytics.
