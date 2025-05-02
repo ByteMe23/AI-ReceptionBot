@@ -1,0 +1,19 @@
+{
+    "subscription": {
+      "question": "What is included in the subscription?",
+      "answer": "Our subscription includes access to premium content, support, and exclusive offers."
+    },
+    "cancellationPolicy": {
+      "question": "What is your cancellation policy?",
+      "answer": "You can cancel your subscription at any time with no penalty."
+    },
+    "paymentMethods": {
+      "question": "What payment methods do you accept?",
+      "answer": "We accept credit cards, PayPal, and bank transfers."
+    },
+    "customerSupport": {
+      "question": "How can I contact customer support?",
+      "answer": "You can reach our customer support team via email or live chat on our website."
+    }
+  }
+  
