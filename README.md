@@ -39,6 +39,10 @@ This project demonstrates how an AI receptionist can escalate unfamiliar queries
   curl -X POST http://127.0.0.1:5000/call -d "question=Write your question here?"
 ```
 
+## FlowChart
+![Flowchart of AI Agent](https://github.com/user-attachments/assets/7be07ab6-9655-42ba-a8b3-a0cb151df328)
+
+
 ## Extensibility
 - **The system is easily extensible to support databases like Firebase or Amazon DynamoDB instead of local JSON files.**
 - **Built to handle high-throughput usage with minimal latency—ideal for production workloads and 1K+ daily requests.**
