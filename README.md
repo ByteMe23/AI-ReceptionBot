@@ -34,8 +34,7 @@ This project demonstrates how an AI receptionist can escalate unfamiliar queries
    aibot.py
    ```
 
-5. Test the AI agent (via Postman or curl)
-**Example with curl:**
+5. Test the AI agent 
 ```bash
   curl -X POST http://127.0.0.1:5000/call -d "question=Write your question here?"
 ```
