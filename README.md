@@ -10,11 +10,11 @@ This project demonstrates how an AI receptionist can escalate unfamiliar queries
 - **Continuous Learning**: Learns from supervisor inputs to enhance future responses.
 
 ## Tech Stack
-Python 3
-Flask
-HTML + Bootstrap 
-JSON (as a lightweight DB)
-Postman (to simulate customer calls)
+**Python**
+**Flask**
+**HTML + Bootstrap**
+**JSON**
+**Postman**
 
 ##Setup Instructions
 Clone the repo
