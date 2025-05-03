@@ -1,9 +1,8 @@
-🧠 Frontdesk HITL AI Supervisor
-A simple, modular Flask-based simulation of a human-in-the-loop (HITL) AI receptionist system.
+##AI Supervisor
 
-This project was built as part of Frontdesk's engineering assessment and demonstrates how an AI receptionist can escalate unknown questions to a human supervisor, follow up with customers, and update its internal knowledge base.
+This project demonstrates how an AI receptionist can escalate unfamiliar queries to a human supervisor, follow up with customers, and continuously update its internal knowledge base.
 
-🚀 Features
+#🚀 Features
 📞 Simulated AI agent that receives questions via /call
 🤖 Answers known questions from a local knowledge base
 ❓ Escalates unknown questions by creating a help request
