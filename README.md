@@ -1,8 +1,8 @@
-##AI Supervisor
+## AI Supervisor
 
 This project demonstrates how an AI receptionist can escalate unfamiliar queries to a human supervisor, follow up with customers, and continuously update its internal knowledge base.
 
-#🚀 Features
+# 🚀 Features
 📞 Simulated AI agent that receives questions via /call
 🤖 Answers known questions from a local knowledge base
 ❓ Escalates unknown questions by creating a help request
