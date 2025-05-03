@@ -1,87 +1,62 @@
-# Frontdesk HITL AI Supervisor
+🧠 Frontdesk HITL AI Supervisor
+A simple, modular Flask-based simulation of a human-in-the-loop (HITL) AI receptionist system.
 
-A simple Flask-based simulation of a Human-in-the-Loop (HITL) AI receptionist system, designed for handling customer interactions with AI assistance and supervisor escalation.
+This project was built as part of Frontdesk's engineering assessment and demonstrates how an AI receptionist can escalate unknown questions to a human supervisor, follow up with customers, and update its internal knowledge base.
 
-## Features
-- **AI Receptionist**: Handles incoming customer queries via `/call`.
-- **Knowledge Base**: Responds to known questions stored in a local knowledge base.
-- **Escalation Process**: If the AI can't answer, it creates a help request that gets escalated to a supervisor.
-- **Admin Panel**: A simple UI to manage help requests, mark them as resolved or unresolved, and view the knowledge base.
-- **Learning**: Supervisors can add answers to the knowledge base, allowing the AI to learn and improve.
-
-## Tech Stack
-- Python 3
-- Flask
-- HTML + Bootstrap 5
-- JSON (lightweight database)
-- Postman (for testing)
-
-## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/frontdesk-hitl.git
-   cd frontdesk-hitl
-Set up the virtual environment:
-
-bash
-Always show details
-
-Copy
+🚀 Features
+📞 Simulated AI agent that receives questions via /call
+🤖 Answers known questions from a local knowledge base
+❓ Escalates unknown questions by creating a help request
+🧑 Supervisor Panel (admin UI) to:
+View and resolve help requests
+Mark unanswered ones as unresolved after 10 mins
+💾 Automatically learns new Q&As from supervisor input
+📚 Viewable Knowledge Base section
+✅ Clean request lifecycle: Pending → Resolved / Unresolved
+🧰 Tech Stack
+Python 3
+Flask
+HTML + Bootstrap 5
+JSON (as a lightweight DB)
+Postman (to simulate customer calls)
+🛠️ Setup Instructions
+Clone the repo
+git clone https://github.com/yourusername/frontdesk-hitl.git
+cd frontdesk-hitl
+Set up virtual environment
 python -m venv venv
 venv\Scripts\activate  # (Windows) or source venv/bin/activate (Linux/macOS)
-Install dependencies:
-
-bash
-Always show details
-
-Copy
 pip install flask
-Run the application:
+Run the app
+ python app.py
+Test the AI agent (via Postman or curl)
 
-bash
-Always show details
+Example with curl:
 
-Copy
-python app.py
-Test the AI agent (via Postman or curl):
-
-bash
-Always show details
-
-Copy
 curl -X POST http://127.0.0.1:5000/call -d "question=What are your working hours?"
-Folder Structure
-bash
-Always show details
-
-Copy
+📂 Folder Structure
 frontdesk-hitl/
-├── app.py                # Flask server
-├── help_requests.json    # Help request data (simulated DB)
-├── knowledge_base.json   # Knowledge base for AI
+│
+├── app.py                 # Flask server
+├── help_requests.json     # Simulated DB of help tickets
+├── knowledge_base.json    # Simulated knowledge base
 ├── templates/
-│   ├── admin.html        # Admin panel UI
-│   └── learned.html      # View for learned answers
-└── README.md             # This README file
-Design Considerations
-File-based Storage: Uses JSON files instead of a database for simplicity and lightweight storage.
+│   ├── admin.html         # Admin panel
+│   └── learned.html       # Learned answers viewer
+└── README.md              # You're reading it
 
-Timeout Feature: Requests are marked as unresolved if unanswered for more than 10 minutes.
-
-Learning from Supervisor: Supervisor answers enrich the AI’s knowledge base.
-
-UI Design: Simple, clean, and responsive using Bootstrap 5 for quick accessibility.
-
-Scalability Notes
-Easily replace JSON with Firebase or DynamoDB for production-level storage.
-
-The system is designed to scale and can handle 1,000+ requests per day.
-
-Future improvements can include Flask blueprints for modularity and integrations like LiveKit or Twilio for real-time call audio.
-
-Planned Improvements
-Authentication: Secure the admin panel with login functionality.
-
-Customer Interaction: Implement customer IDs and SMS callback features.
-
-Call Logs & Metrics: Store historical data for performance tracking and analytics.
+🧠 Design Decisions
+JSON was used instead of a database to keep things lightweight and file-based.
+Timeout logic automatically marks unanswered requests as "unresolved" after 10 minutes.
+Supervisor answers directly enrich the knowledge base, allowing the AI to self-improve.
+Admin UI is kept simple but clean using Bootstrap 5 for fast readability and UX.
+Code is modularized for scalability — separate logic for data handling, routes, and UI.
+📈 Scalability Notes
+Easily extensible to use Firebase or DynamoDB in place of JSON files.
+Can scale up to 1,000+ requests/day with lightweight API-backed architecture.
+Flask blueprints could be introduced to isolate modules.
+LiveKit or Twilio integration would enable real-time call audio in the future.
+🙋‍♂️ What I'd Improve Next
+Add authentication to the admin panel.
+Implement customer ID tagging and actual SMS callbacks.
+Store historical call logs and supervisor performance metrics.
