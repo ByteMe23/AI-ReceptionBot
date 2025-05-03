@@ -49,3 +49,7 @@ This project demonstrates how an AI receptionist can escalate unfamiliar queries
 - **Add authentication to secure the admin panel.**
 - **Implement customer ID tagging and enable real SMS callbacks for improved tracking and communication.**
 - **Store historical call logs and track supervisor performance metrics for analysis and optimization.**
+
+## Final Notes
+**I’ve done my best to align this project with the given requirements. If there are any gaps, I’m highly motivated to learn the necessary technologies and implement them to contribute effectively to real-world industry projects :)**
+
