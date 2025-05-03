@@ -2,21 +2,21 @@
 
 This project demonstrates how an AI receptionist can escalate unfamiliar queries to a human supervisor, follow up with customers, and continuously update its internal knowledge base.
 
-## 🚀Features
--Automated Responses: Handles incoming customer queries via a RESTful API.
--Knowledge Base: Responds to known questions stored in a local knowledge base.
--Human Escalation: Escalates unanswered questions to human supervisors.
--Admin Panel: Manage help requests, mark them as resolved/unresolved, and update the knowledge base.
--Continuous Learning: Learns from supervisor inputs to enhance future responses.
+## Features
+- **Automated Responses**: Handles incoming customer queries via a RESTful API.
+- **Knowledge Base**: Responds to known questions stored in a local knowledge base.
+- **Human Escalation**: Escalates unanswered questions to human supervisors.
+- **Faq_Panel**: Manage help requests, mark them as resolved/unresolved, and update the knowledge base.
+- **Continuous Learning**: Learns from supervisor inputs to enhance future responses.
 
-## 🧰Tech Stack
+## Tech Stack
 Python 3
 Flask
-HTML + Bootstrap 5
+HTML + Bootstrap 
 JSON (as a lightweight DB)
 Postman (to simulate customer calls)
 
-🛠️ Setup Instructions
+##Setup Instructions
 Clone the repo
 git clone https://github.com/yourusername/frontdesk-hitl.git
 cd frontdesk-hitl
