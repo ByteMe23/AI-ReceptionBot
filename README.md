@@ -16,44 +16,37 @@ This project demonstrates how an AI receptionist can escalate unfamiliar queries
 - **JSON**
 - **Postman**
 
-##Setup Instructions
-Clone the repo
-git clone https://github.com/yourusername/frontdesk-hitl.git
-cd frontdesk-hitl
-Set up virtual environment
-python -m venv venv
-venv\Scripts\activate  # (Windows) or source venv/bin/activate (Linux/macOS)
-pip install flask
-Run the app
- python app.py
-Test the AI agent (via Postman or curl)
+## Setup Instructions
+1. Clone the repo
+   ```bash
+   git clone https://github.com/yourusername/ai-receptionbot.git
+   cd ai-receptionbot
+   ```
+2. Set up virtual environment
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate  # (Windows) or source venv/bin/activate (Linux/macOS)
+   pip install flask
+   ```
 
-Example with curl:
+4. Run the app
+   ```bash
+   aibot.py
+   ```
 
-curl -X POST http://127.0.0.1:5000/call -d "question=What are your working hours?"
-📂 Folder Structure
-frontdesk-hitl/
-│
-├── app.py                 # Flask server
-├── help_requests.json     # Simulated DB of help tickets
-├── knowledge_base.json    # Simulated knowledge base
-├── templates/
-│   ├── admin.html         # Admin panel
-│   └── learned.html       # Learned answers viewer
-└── README.md              # You're reading it
+5. Test the AI agent (via Postman or curl)
+**Example with curl:**
+```bash
+  curl -X POST http://127.0.0.1:5000/call -d "question=Write your question here?"
+```
 
-🧠 Design Decisions
-JSON was used instead of a database to keep things lightweight and file-based.
-Timeout logic automatically marks unanswered requests as "unresolved" after 10 minutes.
-Supervisor answers directly enrich the knowledge base, allowing the AI to self-improve.
-Admin UI is kept simple but clean using Bootstrap 5 for fast readability and UX.
-Code is modularized for scalability — separate logic for data handling, routes, and UI.
-📈 Scalability Notes
-Easily extensible to use Firebase or DynamoDB in place of JSON files.
-Can scale up to 1,000+ requests/day with lightweight API-backed architecture.
-Flask blueprints could be introduced to isolate modules.
-LiveKit or Twilio integration would enable real-time call audio in the future.
-🙋‍♂️ What I'd Improve Next
-Add authentication to the admin panel.
-Implement customer ID tagging and actual SMS callbacks.
-Store historical call logs and supervisor performance metrics.
+## Extensibility
+- **The system is easily extensible to support databases like Firebase or Amazon DynamoDB instead of local JSON files.**
+- **Built to handle high-throughput usage with minimal latency—ideal for production workloads and 1K+ daily requests.**
+- **Modular architecture can be further improved using Flask Blueprints to separate concerns and isolate functionality.**
+- **Future integration with LiveKit or Twilio would enable real-time audio calls, enhancing the agent’s interactivity.**
+
+## Future Improvements
+- **Add authentication to secure the admin panel.**
+- **Implement customer ID tagging and enable real SMS callbacks for improved tracking and communication.**
+- **Store historical call logs and track supervisor performance metrics for analysis and optimization.**
